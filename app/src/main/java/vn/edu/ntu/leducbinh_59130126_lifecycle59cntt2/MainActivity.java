@@ -40,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.d("LifeCycle","onStart Called");
+        txtTG = findViewById(R.id.txtTG);
+        SimpleDateFormat smf = new SimpleDateFormat("HH:mm:ss");
+        String strDate = smf.format(new Date());
+        txtTG.setText(strDate);
     }
 
     @Override

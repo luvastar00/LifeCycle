@@ -1,0 +1,6 @@
+4. Khi ứng dụng đang chạy và người dùng sử dụng nút back thì onPause onStop onDestroy được gọi
+khi mở lại ứng dụng thì onCreater onStart được gọi.
+5.Khi ứng dụng đang chạy và người dùng sử dụng nút hom thì onPause onStop được gọi,
+Khi mở lại ứng dụng thì onRestart onStart được gọi.
+6. Nếu cần lưu thông tin của ứng dụng để khôi phục lại trạng thái ban đầu của ứng dụng thì thực hiện trong phương thức onStart
+vì phương thức onStart là phương thức chạy ứng dụng khi cần khôi phục ứng dụng.
