@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("LifeCycle","OnCreater Called");
+
+        Toast.makeText(getApplicationContext(), "onCreater.", Toast.LENGTH_SHORT).show();
+
         txtTG = findViewById(R.id.txtTG);
         SimpleDateFormat smf = new SimpleDateFormat("HH:mm:ss");
         String strDate = smf.format(new Date());
@@ -25,21 +29,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        Log.d("LifeCycle","OnCreater Called");
-    }
-
-    @Override
     protected void onRestart() {
         super.onRestart();
         Log.d("LifeCycle","onRestart Called");
+        Toast.makeText(getApplicationContext(), "onRestart.", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         Log.d("LifeCycle","onStart Called");
+        Toast.makeText(getApplicationContext(), "onStart.", Toast.LENGTH_SHORT).show();
         txtTG = findViewById(R.id.txtTG);
         SimpleDateFormat smf = new SimpleDateFormat("HH:mm:ss");
         String strDate = smf.format(new Date());
@@ -50,17 +50,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.d("LifeCycle","onStop Called");
+        Toast.makeText(getApplicationContext(), "onStop.", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.d("LifeCycle","onPause Called");
+        Toast.makeText(getApplicationContext(), "onPause.", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d("LifeCycle","OnDestroy Called");
+        Toast.makeText(getApplicationContext(), "onDestroy.", Toast.LENGTH_SHORT).show();
     }
 }
